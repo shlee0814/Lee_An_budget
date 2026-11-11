@@ -30,12 +30,14 @@ Auth 계정은 아직 자동 생성하지 않았습니다. Supabase 관리 계�
 
 ## 확인
 
-로컬 실행: `python -m http.server 8123`
+로컬 개발: `npm ci && npm run dev` 실행 후 `/source.html` 접속
 
-브라우저 회귀 테스트: Playwright가 있는 환경에서 `node tests/shared-ledger.cjs`. 이 테스트는 별도 브라우저 두 개와 모의 서버로 저장·동기화·충돌·실패 복구·이전 백업·로그아웃을 검증합니다. Chromium 실행 경로는 환경에 맞게 수정하세요. 실제 Supabase 계정의 로그인/쓰기 통합 확인은 계정 생성 후 진행해야 합니다.
+프로덕션 확인: `npm run build && npm run preview`
 
-배포: GitHub Pages `main` 브랜치의 루트. 빌드 과정이 없습니다.
+브라우저 회귀 테스트: 빌드 후 `python -m http.server 8123 --directory dist`를 실행하고 별도 터미널에서 `npm test`. 이 테스트는 별도 브라우저 두 개와 모의 서버로 저장·동기화·충돌·실패 복구·이전 백업·로그아웃을 검증합니다. Chromium 실행 경로는 환경에 맞게 수정하세요. 실제 Supabase 계정의 로그인/쓰기 통합 확인은 계정 생성 후 진행해야 합니다.
+
+배포: `npm run build` 후 `dist/index.html`과 `dist/assets`를 저장소 루트의 `index.html`과 `assets`에 반영합니다. GitHub Pages는 기존대로 `main` 브랜치 루트를 게시합니다. UI 원본 HTML은 `source.html`입니다.
 
 ## UI 개발
 
-월별·카테고리 차트는 React/Recharts, 아이콘은 Lucide, 차트 카드와 버튼은 shadcn/ui 패턴 및 Tailwind CSS를 사용합니다. 기존 화면의 폼과 달력은 HTML 입력 요소와 공통 스타일을 사용합니다. UI를 수정한 뒤 `npm ci && npm run build`를 실행하고 `dashboard.bundle.js` 및 `tailwind.generated.css`를 함께 커밋하세요. GitHub Pages에서는 별도 서버 빌드 없이 번들 파일을 사용합니다.
+Vite와 Tailwind CSS v4를 사용합니다. 월별·카테고리 차트는 React/Recharts, 아이콘은 Lucide, 차트와 상세 대화상자는 로컬 shadcn/ui 컴포넌트를 사용합니다. 기존 데이터 처리와 인증 스크립트는 순서를 유지한 채 빌드 산출물에 복사됩니다. `ui/redesign.css`는 기존 HTML과 동적으로 생성되는 화면 요소의 공통 디자인을 담당합니다.
