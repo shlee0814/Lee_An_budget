@@ -12,3 +12,6 @@ __pycache__/
 !.env.example
 .streamlit/secrets.toml
 node_modules/
+
+!package.json
+!package-lock.json

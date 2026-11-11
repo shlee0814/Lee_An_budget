@@ -1,0 +1,40 @@
+{
+  "name": "budget-upload",
+  "version": "1.0.0",
+  "description": "\uc815\uc801 \uc0ac\uc774\ud2b8\uc640 Supabase Auth/Postgres\ub85c \ub450 \uc0ac\ub78c\uc774 \ud558\ub098\uc758 \uc7a5\ubd80\ub97c \uacf5\uc720\ud569\ub2c8\ub2e4. \ub85c\uadf8\uc778\ud55c \uc0ac\uc6a9\uc790\uc758 \uc778\uc99d\ub41c \uc774\uba54\uc77c\uc774 \uad00\ub9ac\uc790 \ud5c8\uc6a9 \ubaa9\ub85d\uc758 \ub450 \uc8fc\uc18c \uc911 \ud558\ub098\uc5ec\uc57c \uc77d\uae30\u00b7\uc218\uc815\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4. \uc775\uba85 \uc0ac\uc6a9\uc790 \ubc0f \ub2e4\ub978 \uacc4\uc815\uc740 \uc7a5\ubd80\uc5d0 \uc811\uadfc\ud560 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4.",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "esbuild ui/dashboard.jsx --bundle --minify --target=es2020 --outfile=dashboard.bundle.js && tailwindcss -i ui/tailwind.css -o tailwind.generated.css --minify",
+    "test": "node tests/shared-ledger.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shlee0814/Lee_An_budget.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shlee0814/Lee_An_budget/issues"
+  },
+  "homepage": "https://github.com/shlee0814/Lee_An_budget#readme",
+  "dependencies": {
+    "@radix-ui/react-slot": "1.1.1",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "0.468.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "recharts": "2.15.4",
+    "tailwind-merge": "2.6.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.5",
+    "tailwindcss": "3.4.17"
+  },
+  "private": true
+}
