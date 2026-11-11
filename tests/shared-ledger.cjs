@@ -23,6 +23,11 @@ const base='http://127.0.0.1:8123';
  // Network failure preserves a recoverable draft and does not claim success.
  fail=true;await a.click('.nav[data-page=entry]');await a.fill('#description','실패 테스트');await a.fill('#amount','2000');await a.click('#saveEntry');await a.waitForFunction(()=>!!rejectedDraft);assert.equal(await a.evaluate(()=>rejectedDraft.transactions.length),2);assert.equal(state.transactions.length,1);
  fail=false;await a.click('#recoverLedger');await a.waitForFunction(()=>sharedReady);
+ // Account and backup actions live in Settings.
+ await a.click('.nav[data-page=settings]');
+ assert.equal(await a.locator('#settings').isVisible(),true);
+ assert.equal(await a.locator('#accountEmail').textContent(),'member1@example.com');
+ assert.equal(await a.locator('#addTop').isVisible(),false);
  // Legacy JSON backup migration writes the shared ledger.
  await a.locator('#importLedger').setInputFiles({name:'backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({state:{transactions:[{id:'legacy-1',date:'2026-11-01',kind:'수입',description:'이전 급여',category:'급여',amount:10000}],recurring:[],budgets:{'2026-11':{'외식비':50000}},categoryRules:{}}}))});
  await a.waitForFunction(()=>data.transactions[0]?.id==='legacy-1'&&!ledgerBusy);assert.equal(state.transactions[0].id,'legacy-1');

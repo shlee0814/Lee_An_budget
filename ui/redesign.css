@@ -3,3 +3,15 @@
 @media(max-width:1000px){.sidebar{width:200px}main{margin-left:200px}.content{padding:30px}.top{padding:0 30px}}
 @media(max-width:650px){.sidebar{width:auto;position:static;padding:17px 16px 0}.brand{font-size:16px}.sidebar nav{margin-top:17px;gap:5px;overflow-x:auto;scrollbar-width:none}.sidebar nav::-webkit-scrollbar{display:none}.sidebar nav .nav{padding:11px 12px;font-size:12px;margin:0 0 8px}.nav.active{background:#344f9f}.top{height:42px;padding:0 20px;background:#fff}.content{padding:24px 16px 36px}main{margin:0}.shared-account{margin-bottom:26px}.account-actions{flex-wrap:wrap}.heading{margin-bottom:24px}.heading h1{font-size:25px}.metrics{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.metric{padding:14px 12px;min-height:112px}.metric-top{font-size:11px}.metric-icon{width:27px;height:27px;font-size:13px}.metric strong{font-size:17px;letter-spacing:-.7px;margin-top:11px;overflow-wrap:anywhere}.metric small{font-size:10px}.card,.analysis-card{padding:20px}.chart-grid{grid-template-columns:1fr;gap:12px}.dashboard{gap:12px}.entry-grid{gap:12px}.month-picker strong{font-size:15px}.add-btn{white-space:nowrap}footer{line-height:1.5}}
 @media(max-width:380px){.metrics{grid-template-columns:1fr}.metric{min-height:0}.metric strong{margin-top:3px}.metric small{margin-top:2px}.fields{grid-template-columns:1fr}}
+
+/* Settings groups the existing account and backup controls in one place. */
+#settings .shared-account{display:block;max-width:780px;padding:28px;margin:0}
+#settings .settings-heading{padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid #e8edf5}
+#settings .settings-heading h2{margin-bottom:8px}
+#settings .shared-account strong{font-size:15px;color:#1d2a43}
+#settings .shared-account #syncStatus{font-size:12px;margin-top:7px}
+#settings .account-actions{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:9px;margin-top:24px}
+#settings .account-actions button,#settings .account-actions label{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:10px 14px;border:1px solid #dfe6f0;border-radius:9px;background:#fff;color:#405dbc;font-size:12px;white-space:normal;text-align:center}
+#settings .account-actions button:hover,#settings .account-actions label:hover{background:#f4f6fd}
+#settings .account-actions #logout{color:#a14e59}
+@media(max-width:650px){#settings .shared-account{padding:20px}#settings .account-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}

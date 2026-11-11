@@ -1,7 +1,7 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
 import {BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell} from 'recharts';
-import {LayoutDashboard, List, PenLine, Target, Repeat2, TrendingDown, ChartNoAxesCombined} from 'lucide-react';
+import {LayoutDashboard, List, PenLine, Target, Repeat2, Settings, TrendingDown, ChartNoAxesCombined} from 'lucide-react';
 import { Button } from './components/ui/button';
 import { Card } from './components/ui/card';
 import { Input } from './components/ui/input';
@@ -22,5 +22,5 @@ function Charts({rows,month}){
 }
 const root=createRoot(document.getElementById('analytics'));
 window.updateLedgerCharts=(rows,month)=>root.render(<Charts rows={rows} month={month}/>);
-const icons=[LayoutDashboard,List,PenLine,Target,Repeat2];
+const icons=[LayoutDashboard,List,PenLine,Target,Repeat2,Settings];
 document.querySelectorAll('.nav span').forEach((el,i)=>{if(icons[i]){const Icon=icons[i];createRoot(el).render(<Icon size={19} strokeWidth={1.8} aria-hidden="true"/>);}});
