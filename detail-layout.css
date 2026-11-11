@@ -1,0 +1,10 @@
+#detail .detail-tabs-grid{display:block}
+#detail .detail-tabs{display:flex;gap:6px;margin:0 0 18px;border-bottom:1px solid #e4eae2}
+#detail .detail-tabs button{border:0;border-bottom:2px solid transparent;background:none;padding:12px 22px;color:#899b8d;font-weight:700}
+#detail .detail-tabs button.active{border-bottom-color:#28593f;color:#28593f}
+#detail .detail-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}
+#detail .detail-actions label{display:flex;align-items:center;gap:8px;margin:0}
+#detail input[type=checkbox]{display:inline-block;width:16px;height:16px;min-width:16px;flex:0 0 16px;padding:0;margin:0;accent-color:#28593f}
+#detail .detail-delete{width:auto;margin:0;padding:9px 14px}
+#detail .tx button{white-space:nowrap}
+#detail .tx-info small{overflow-wrap:anywhere}

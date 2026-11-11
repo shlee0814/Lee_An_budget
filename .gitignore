@@ -1,0 +1,14 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.db
+*.sqlite*
+*.json
+!*.webmanifest
+
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+node_modules/
